@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.cienet.loginbutton"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.1" >
 
     <uses-sdk
         android:minSdkVersion="18"
@@ -29,6 +29,9 @@
             android:launchMode="singleTop"
             android:theme="@style/DialogActivity" >
         </activity>
+        
+        <activity android:name=".TestActivity"
+            android:label="@string/test"></activity>
     </application>
 
 </manifest>

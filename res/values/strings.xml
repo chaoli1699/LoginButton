@@ -9,4 +9,8 @@
     <string name="login">登录</string>
     <string name="input_name">输入用户名</string>
     <string name="input_password">输入密码</string>
+    
+    <string name="test">测试</string>
+    <string name="next_page">下一页</string>
+    <string name="back_to_main">返回主页</string>
 </resources>

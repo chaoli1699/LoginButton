@@ -18,9 +18,20 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 	}
 	
+	@Override
+	protected void onNewIntent(Intent intent) {
+		// TODO Auto-generated method stub
+		Toast.makeText(MainActivity.this, "onNewIntent", Toast.LENGTH_SHORT).show();
+		super.onNewIntent(intent);
+	}
+	
 	public void toLogin(View view){
 //		Toast.makeText(MainActivity.this, "login", Toast.LENGTH_SHORT).show();
 		startActivityForResult(new Intent(MainActivity.this, LoginActivity.class), LOGIN_REQUEST_CODE);
+	}
+	
+	public void nextPage(View view){
+		startActivity(new Intent(MainActivity.this, TestActivity.class));
 	}
 	
 	@Override
