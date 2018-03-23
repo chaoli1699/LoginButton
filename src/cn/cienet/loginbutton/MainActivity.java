@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	
+	private static final int LOGIN_REQUEST_CODE=0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +20,19 @@ public class MainActivity extends Activity {
 	
 	public void toLogin(View view){
 //		Toast.makeText(MainActivity.this, "login", Toast.LENGTH_SHORT).show();
-		startActivity(new Intent(MainActivity.this, LoginActivity.class));
+		startActivityForResult(new Intent(MainActivity.this, LoginActivity.class), LOGIN_REQUEST_CODE);
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		if (requestCode==LOGIN_REQUEST_CODE) {
+			if (resultCode==RESULT_OK) {
+				String name=data.getStringExtra("name");
+				Toast.makeText(MainActivity.this, "用户："+name+"登录成功！", Toast.LENGTH_SHORT).show();
+			}
+		}
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	@Override

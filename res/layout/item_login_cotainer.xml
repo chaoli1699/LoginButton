@@ -25,7 +25,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
         android:hint="@string/input_name"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:maxLength="8"
+        android:imeOptions="actionNext"
+        android:inputType="text" />
     
     <EditText 
         android:id="@+id/login_pwd"
@@ -36,5 +39,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:hint="@string/input_password"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:maxLength="12"
+        android:imeOptions="actionGo"
+        android:inputType="textPassword" />
+    
 </LinearLayout>
