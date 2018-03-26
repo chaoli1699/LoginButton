@@ -74,6 +74,7 @@ public class LoginActivity extends Activity {
 				// TODO Auto-generated method stub
 				Intent intent=new Intent();
 				intent.putExtra("name", nameStr);
+				intent.putExtra("password", pwdStr);
 				setResult(RESULT_OK, intent);
 				LoginActivity.this.finish();
 			}
@@ -83,14 +84,20 @@ public class LoginActivity extends Activity {
 	private void login(){
 		nameStr=nameEt.getText().toString().trim();
 		pwdStr=pwdEt.getText().toString().trim();
-		if (nameStr!=null&&nameStr.length()>0) {
-		    closeKeyboard(pwdEt);
-			LoginActivity.this.setFinishOnTouchOutside(false);
-			loginContainer.setVisibility(View.INVISIBLE);
-			okBtn.startAnim();
-		}else {
+		
+		if (nameStr==null||nameStr.length()<1) {
 			nameEt.setError("用户名为空");
+			return ;
 		}
+		if (pwdStr==null||pwdStr.length()<1) {
+   		    pwdEt.setError("密码为空");
+	   	    return ;
+		}
+		
+		closeKeyboard(pwdEt);
+		LoginActivity.this.setFinishOnTouchOutside(false);
+		loginContainer.setVisibility(View.INVISIBLE);
+		okBtn.startAnim();
 	}
 	
 	/**
